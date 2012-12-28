@@ -1,0 +1,23 @@
+{
+  "name": "coffee-stylesheets-compass-framework",
+  "version": "0.0.1",
+  "description": "Compass Framework ported to CoffeeStylesheets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikesmullin/coffee-stylesheets-compass-framework.git"
+  },
+  "keywords": [
+    "compass",
+    "framework",
+    "coffee",
+    "stylesheets",
+    "port"
+  ],
+  "author": "Mike Smullin <mike@smullindesign.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
