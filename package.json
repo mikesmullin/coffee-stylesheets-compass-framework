@@ -2,7 +2,7 @@
   "name": "coffee-stylesheets-compass-framework",
   "version": "0.0.1",
   "description": "Compass Framework ported to CoffeeStylesheets",
-  "main": "index.js",
+  "main": "stylesheets/compass.css.coffee",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
