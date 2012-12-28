@@ -129,14 +129,14 @@ reset_html5 = ->
 #       reset_display '.registered-only'
 #     body.unregistered
 #       reset_display '.unregistered-only'
-reset_display = (selector='', important='false') ->
+reset_display = (selector='', important=false) ->
   s elements_of_type('inline')+' '+selector, ->
-    if important isnt 'false'
+    if important
       display 'inline !important'
     else
       display 'inline'
   s elements_of_type('block')+' '+selector, ->
-    if important isnt 'false'
+    if important
       display 'block !important'
     else
       display 'block'

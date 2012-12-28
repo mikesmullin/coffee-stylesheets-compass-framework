@@ -23,3 +23,44 @@ DEFAULT_DISPLAY['html5'] = (DEFAULT_DISPLAY['html5-block']+' '+DEFAULT_DISPLAY['
 # elements according to their default css3 display value.
 elements_of_type = (display) ->
   DEFAULT_DISPLAY[display].split(' ').join(', ')
+
+opposite_position = (pos) ->
+  return switch pos
+    when 'left'
+      'right'
+    when 'right'
+      'left'
+    when 'top'
+      'bottom'
+    when 'bottom'
+      'top'
+
+# special function to split units into numerals
+__n = (s) ->
+  if typeof s is 'function' and typeof s.unit isnt 'undefined'
+    return s
+  f = ->
+  f.numeral = parseFloat s
+  f.unit = s.toString().replace /[\d-+.]+/, ''
+  f.toString = ->
+    @numeral
+  return f
+unit = (s) -> __n(s).unit
+relative_unit = (s) -> switch unit(s)
+  when 'em', '%'
+    true
+  else
+    false
+unitless = (s) -> not unit(s)
+
+# mathematical operation helpers; preserves unit
+# of first argument
+__mul = (a,b) -> ((u=__n(a)) * __n(b)) + u.unit
+__div = (a,b) -> ((u=__n(a)) / __n(b)) + u.unit
+__add = (a,b) -> ((u=__n(a)) + __n(b)) + u.unit
+__sub = (a,b) -> ((u=__n(a)) - __n(b)) + u.unit
+__floor = (a) -> Math.floor(u=__n(a))+u.unit
+__ceil = (a) -> Math.ceil(u=__n(a))+u.unit
+
+warn = (s) ->
+  console.log "WARN: "+s
