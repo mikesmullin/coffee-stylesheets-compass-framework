@@ -19,3 +19,5 @@
 #= require css3/hyphenation.css.coffee
 #= require css3/filter.css.coffee
 #= require css3/user-interface.css.coffee
+
+#= require css3/color.css.coffee

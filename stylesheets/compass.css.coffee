@@ -12,4 +12,3 @@
 
 _pending = (n) -> -> warn "#{n} called but not implemented yet."
 lighten = _pending 'lighten'
-linear_gradient = _pending 'linear_gradient'
