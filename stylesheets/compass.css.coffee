@@ -8,7 +8,7 @@
 
 #  require layout.css.coffee
 #= require reset/utilities.css.coffee
-#  require support.css.coffee
+#= require support.css.coffee
 
 _pending = (n) -> -> warn "#{n} called but not implemented yet."
 lighten = _pending 'lighten'

@@ -1,5 +1,21 @@
-border_radius = (s)-> literal """
-  -moz-border-radius: #{s};
-    -webkit-border-radius: #{s};
-    border-radius: #{s};
-"""
+#= require css3/shared.css.coffee
+#= require css3/border-radius.css.coffee
+#= require css3/inline-block.css.coffee
+#= require css3/opacity.css.coffee
+#= require css3/box-shadow.css.coffee
+#= require css3/text-shadow.css.coffee
+#= require css3/columns.css.coffee
+#= require css3/box-sizing.css.coffee
+#= require css3/box.css.coffee
+#= require css3/images.css.coffee
+#= require css3/background-clip.css.coffee
+#= require css3/background-origin.css.coffee
+#= require css3/background-size.css.coffee
+#= require css3/font-face.css.coffee
+#= require css3/transform.css.coffee
+#= require css3/transition.css.coffee
+#= require css3/appearance.css.coffee
+#= require css3/regions.css.coffee
+#= require css3/hyphenation.css.coffee
+#= require css3/filter.css.coffee
+#= require css3/user-interface.css.coffee
