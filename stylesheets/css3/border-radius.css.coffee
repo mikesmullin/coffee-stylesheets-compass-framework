@@ -36,39 +36,27 @@ _default_border_radius = '5px'
 #      -khtml-border-radius: 1px 3px 5px 7px / 2px 4px 6px 8px;
 #      border-radius: 1px 3px 5px 7px / 2px 4px 6px 8px; }
 
-border_radius = (s)-> literal """
-  -moz-border-radius: #{s};
-    -webkit-border-radius: #{s};
-    border-radius: #{s};
-"""
+border_radius = (_radius=_default_border_radius, _vertical_radius=false) ->
+  if _vertical_radius
+    # Webkit doesn't understand the official shorthand syntax for specifying
+    # a vertical radius unless so in case there's several we only take the first.
+    experimental 'border-radius', "#{_radius.split(' ')[0]} #{_vertical_radius.split(' ')[0]}",
+      not '-moz',
+      '-webkit',
+      not '-o',
+      not '-ms',
+      not '-khtml',
+      not 'official'
+    experimental 'border-radius', "#{_radius}/#{_vertical_radius}",
+      '-moz',
+      not '-webkit',
+      not '-o',
+      not '-ms',
+      '-khtml',
+      'official'
+  else
+    experimental 'border-radius', _radius
 
-#@mixin border-radius($radius: $default-border-radius, $vertical-radius: false) {
-#
-#  @if $vertical-radius {
-#    // Webkit doesn't understand the official shorthand syntax for specifying
-#    // a vertical radius unless so in case there's several we only take the first.
-#    @include experimental(border-radius, first-value-of($radius) first-value-of($vertical-radius),
-#      not -moz,
-#      -webkit,
-#      not -o,
-#      not -ms,
-#      not -khtml,
-#      not official
-#    );
-#    @include experimental("border-radius", $radius unquote("/") $vertical-radius,
-#      -moz,
-#      not -webkit,
-#      not -o,
-#      not -ms,
-#      -khtml,
-#      official
-#    );
-#  }
-#  @else {
-#    @include experimental(border-radius, $radius);
-#  }
-#}
-#
 #// Round radius at position by amount.
 #//
 #// * legal values for `$vert`: `top`, `bottom`
