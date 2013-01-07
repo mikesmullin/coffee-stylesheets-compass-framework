@@ -1,6 +1,6 @@
 {
   "name": "coffee-stylesheets-compass-framework",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Compass Framework ported to CoffeeStylesheets",
   "main": "stylesheets/compass.css.coffee",
   "scripts": {
